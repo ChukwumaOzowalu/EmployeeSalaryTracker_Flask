@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Management</title>
+</head>
+<body>
+    <h1>Employee Management</h1>
+    <form action="/process_form" method="post">
+        <label for="num_employees">Number of Employees:</label>
+        <input type="number" id="num_employees" name="num_employees"><br><br>
+        {% for num in range(num_employees) %}
+            <label for="name{{ num }}">Name:</label>
+            <input type="text" id="name{{ num }}" name="name{{ num }}"><br>
+            <label for="id_number{{ num }}">ID Number:</label>
+            <input type="number" id="id_number{{ num }}" name="id_number{{ num }}"><br>
+            <label for="department{{ num }}">Department:</label>
+            <input type="text" id="department{{ num }}" name="department{{ num }}"><br>
+            <label for="job_title{{ num }}">Job Title:</label>
+            <input type="text" id="job_title{{ num }}" name="job_title{{ num }}"><br>
+            <label for="salary{{ num }}">Initial Salary:</label>
+            <input type="number" id="salary{{ num }}" name="salary{{ num }}"><br>
+            <label for="salary_change{{ num }}">Change Salary:</label>
+            <input type="number" id="salary_change{{ num }}" name="salary_change{{ num }}"><br><br>
+        {% endfor %}
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
